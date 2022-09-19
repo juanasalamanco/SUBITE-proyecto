@@ -1,0 +1,3 @@
+[submodule "SUBITE-back"]
+	path = SUBITE-back
+	url = http://github.com/ambarpalermo/SUBITE-back
