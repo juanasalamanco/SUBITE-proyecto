@@ -1,3 +1,6 @@
 [submodule "SUBITE-back"]
 	path = SUBITE-back
 	url = http://github.com/ambarpalermo/SUBITE-back
+[submodule "front-subite"]
+	path = front-subite
+	url = https://github.com/Nicokelman/front-subite
