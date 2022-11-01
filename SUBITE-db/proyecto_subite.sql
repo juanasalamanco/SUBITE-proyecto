@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 27-10-2022 a las 14:36:35
+-- Tiempo de generación: 31-10-2022 a las 14:44:55
 -- Versión del servidor: 5.7.17-log
 -- Versión de PHP: 5.6.30
 
@@ -56,19 +56,21 @@ CREATE TABLE `json` (
   `temperatura` int(11) NOT NULL,
   `cant_de_personas` int(11) NOT NULL,
   `calidad_de_aire` int(11) NOT NULL,
-  `nivel_de_sonido` int(11) NOT NULL,
+  `nivel_de_sonido` varchar(1000) NOT NULL,
   `Linea` varchar(1000) NOT NULL,
   `ID_Vagon` int(11) NOT NULL,
-  `clave` int(11) NOT NULL
+  `clave` int(11) NOT NULL,
+  `Estacion` varchar(1000) NOT NULL,
+  `Terminal` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `json`
 --
 
-INSERT INTO `json` (`humedad`, `temperatura`, `cant_de_personas`, `calidad_de_aire`, `nivel_de_sonido`, `Linea`, `ID_Vagon`, `clave`) VALUES
-(95, 25, 0, 5, 50, 'T', 0, 1),
-(56, 26, 0, 0, 0, 'T', 0, 2);
+INSERT INTO `json` (`humedad`, `temperatura`, `cant_de_personas`, `calidad_de_aire`, `nivel_de_sonido`, `Linea`, `ID_Vagon`, `clave`, `Estacion`, `Terminal`) VALUES
+(95, 25, 0, 5, '50', 'T', 0, 1, '', ''),
+(56, 26, 0, 0, '0', 'T', 0, 2, '', '');
 
 -- --------------------------------------------------------
 
@@ -274,21 +276,6 @@ INSERT INTO `linea_h` (`Estaciones`, `A_Hospitales`, `A_Facultad_De_Derecho`, `I
 ('Las_Heras', 0, 0, 11),
 ('Facultad_De_Derecho', 0, 0, 12);
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `trenes`
---
-
-CREATE TABLE `trenes` (
-  `ID_Vagon` int(11) NOT NULL,
-  `ID_Tren` int(11) NOT NULL,
-  `Linea` varchar(1000) NOT NULL,
-  `Direccion` varchar(1000) NOT NULL,
-  `Cant_Personas` int(11) NOT NULL,
-  `Ultima_Parada` varchar(1000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 --
 -- Índices para tablas volcadas
 --
@@ -346,12 +333,6 @@ ALTER TABLE `linea_e`
 --
 ALTER TABLE `linea_h`
   ADD PRIMARY KEY (`ID`);
-
---
--- Indices de la tabla `trenes`
---
-ALTER TABLE `trenes`
-  ADD PRIMARY KEY (`ID_Tren`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
